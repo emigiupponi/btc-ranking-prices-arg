@@ -2,7 +2,7 @@ name: Ejecución Diaria
 
 on:
   schedule:
-    - cron: '1 0 * * *' # Ejecutar a la medianoche todos los días
+    - cron: '0 0 * * *' # Ejecutar a la medianoche todos los días
 
 jobs:
   build:
@@ -15,4 +15,4 @@ jobs:
     - name: Ejecutar Notebook
       run: |
         pip install nbconvert
-        jupyter nbconvert --to notebook --execute btc-ranking-prices-in-argentina.ipynb
+        jupyter nbconvert --to notebook --execute hello_world.ipynb
