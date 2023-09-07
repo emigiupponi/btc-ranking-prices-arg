@@ -2,7 +2,7 @@ name: Ejecución Diaria
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Ejecutar a la medianoche todos los días
+    - cron: '1 0 * * *' # Ejecutar a la medianoche todos los días
 
 jobs:
   build:
