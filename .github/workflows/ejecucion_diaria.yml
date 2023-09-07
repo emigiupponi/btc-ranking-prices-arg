@@ -1,1 +1,18 @@
+name: Ejecución Diaria
 
+on:
+  schedule:
+    - cron: '0 0 * * *' # Ejecutar a la medianoche todos los días
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del Repositorio
+      uses: actions/checkout@v2
+
+    - name: Ejecutar Notebook
+      run: |
+        pip install nbconvert
+        jupyter nbconvert --to notebook --execute btc-ranking-prices-in-argentina.ipynb
