@@ -12,7 +12,16 @@ jobs:
     - name: Checkout del Repositorio
       uses: actions/checkout@v2
 
-    - name: Ejecutar Notebook
+    - name: Configurar Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+
+    - name: Instalar dependencias de Python
       run: |
         pip install nbconvert
+      # Esto instalará nbconvert, pero no ejecutará el notebook.
+
+    - name: Ejecutar Notebook
+      run: |
         jupyter nbconvert --to notebook --execute hello_world.ipynb
